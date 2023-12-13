@@ -1,7 +1,8 @@
 #include <stdio.h> 
+#include "database/DatabaseStructures.c"
 #include "database/table/create/CreateTable.h"
 #include "database/table/list/ListTable.h"
-#include "database/DatabaseStructures.c"
+#include "database/table/insert/InsertTuple.h"
 
 int main() {
     printf("Olá do arquivo main.c!\n");
@@ -11,6 +12,7 @@ int main() {
 
     CreateTable(&myDatabase);
     ListTable(&myDatabase);
+    InsertTuple(&myDatabase);
 
     return 0;
 }
