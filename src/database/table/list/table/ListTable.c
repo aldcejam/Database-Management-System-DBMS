@@ -1,3 +1,4 @@
+#include "ListTable.h"
 #include "../../../DatabaseStructures.c"
 
 void ListTable(Database *db) {
