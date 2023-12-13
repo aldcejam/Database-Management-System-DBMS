@@ -10,7 +10,7 @@
                 "${workspaceFolder}/src/main.c",  
                 "${workspaceFolder}/src/database/DatabaseStructures.c",
                 "${workspaceFolder}/src/database/table/create/CreateTable.c",
-                "${workspaceFolder}/src/database/table/list/ListTable.c",
+                "${workspaceFolder}/src/database/table/list/table/ListTable.c",
                 "${workspaceFolder}/src/database/table/insert/InsertTuple.c",
                 "-o",  
                 "${workspaceFolder}/dist/main",

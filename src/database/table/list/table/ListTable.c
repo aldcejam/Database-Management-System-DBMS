@@ -1,4 +1,4 @@
-#include "../../DatabaseStructures.c"
+#include "../../../DatabaseStructures.c"
 
 void ListTable(Database *db) {
     printf("Tabelas existentes:\n");

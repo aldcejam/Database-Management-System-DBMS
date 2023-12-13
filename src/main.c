@@ -1,7 +1,7 @@
 #include <stdio.h> 
 #include "database/DatabaseStructures.c"
 #include "database/table/create/CreateTable.h"
-#include "database/table/list/ListTable.h"
+#include "database/table/list/table/ListTable.h"
 #include "database/table/insert/InsertTuple.h"
 
 int main() {
