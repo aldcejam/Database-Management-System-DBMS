@@ -24,8 +24,7 @@ O projeto consiste na implementação de um Sistema de Gerenciamento de Banco de
     </li> 
 </ol>
 
-
-### Criar uma nova tupla (linha ou registro) na tabela ###
+### Criar uma nova tupla (linha ou registro) na tabela
 
 <ol>
     <li>Usuário deve informar o nome da tabela</li>
@@ -35,22 +34,39 @@ O projeto consiste na implementação de um Sistema de Gerenciamento de Banco de
 </li> 
 </ol>
 
-<li></li>
+### Listar todos os dados de uma tabela
 
-Uma tabela deve ter uma única chave primária. Se o usuário informar uma chave que já existe, o sistema emite uma mensagem de erro e não insere o registro.
-Listar todos os dados de uma tabela
+<ol>
+    <li>Usuário deve informar qual a tabela para serem listados os dados</li>
+    <li>os dados deverão ser obtidos a partir do arquivo que armazena o conteúdo da tabela;</li>
+</ol>
 
-O usuário informa a tabela para listar os dados.
-Os dados são obtidos a partir do arquivo que armazena o conteúdo da tabela.
-Pesquisar valor em uma tabela
+### Pesquisar valor em uma tabela
 
-O usuário informa o nome da tabela para realizar a pesquisa.
-O sistema fornece as colunas disponíveis.
-O usuário seleciona uma coluna.
-O sistema solicita o valor para pesquisa, oferecendo opções como maior que, maior ou igual a, igual a, menor que, menor ou igual a, próximo ao valor informado (aplica-se apenas a colunas do tipo string).
-Apagar uma tupla (registro ou linha) de uma tabela
+<ol>
+    <li>Usuário deverá informar o nome da tabela onde realizará a pesquisa</li>
+    <li>Sistema deverá fornecer as colunas disponíveis na tabela o usuário deverá selecionar uma delas</li>
+    <li>Sistema deverá solicitar o valor para pesquisar, disponibilizando algumas opções
+        <ul>
+            <li>valores maior que o valor informado</li>
+            <li>valores maior ou igual que o valor informado</li>
+            <li>valores igual o valor informado</li>
+            <li>valores menor que o valor informado</li>
+            <li>valores menor ou igual que o valor informado</li>
+            <li>valores próximo ao valor informado</li>
+        </ul>
+    </li>
+</ol>
 
-O usuário informa o nome da tabela e a chave primária da tupla a ser apagada.
-Apagar uma tabela
 
-O usuário fornece o nome da tabela a ser apagada.
+### Apagar uma tupla (registro ou linha) de uma tabela ###
+
+<ol>
+    <li>Usuário deve informar o nome da tabela e a chave primária da tupla a ser apagada</li>
+</ol>
+
+### Apagar uma tabela ###
+
+<ol>
+    <li>usuário deverá fornecer o nome da tabela a ser apagada</li>
+</ol> 
