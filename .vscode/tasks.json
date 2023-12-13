@@ -7,10 +7,13 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}/dist/${fileBasenameNoExtension}"
-            ],
+                "${workspaceFolder}/src/main.c",  
+                "${workspaceFolder}/src/database/DatabaseStructures.c",
+                "${workspaceFolder}/src/database/table/create/CreateTable.c",
+                "${workspaceFolder}/src/database/table/list/ListTable.c",
+                "-o",  
+                "${workspaceFolder}/dist/main",
+            ], 
             "options": {
                 "cwd": "${fileDirname}"
             },
