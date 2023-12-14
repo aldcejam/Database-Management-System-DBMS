@@ -13,11 +13,9 @@ int main() {
     Database myDatabase; 
     myDatabase.numTables = 0;
 
-    CreateTable(&myDatabase);
-    ListTable(&myDatabase);
+    CreateTable(&myDatabase); 
     InsertTuple(&myDatabase);
-    InsertTuple(&myDatabase);
-    SearchTuple(&myDatabase);
+    SearchTuple(&myDatabase);  
 /*     ListTableData(&myDatabase);
     DeleteTable(&myDatabase);
     ListTable(&myDatabase);

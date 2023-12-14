@@ -12,7 +12,8 @@ void SearchTuple(Database *db)
 
     for (int i = 0; i < db->numTables; i++) {
         if (strcmp(db->tables[i].name, tableName) == 0) {
-            return &(db->tables[i]);
+            table = &(db->tables[i]);
+            break;
         }
     }
 

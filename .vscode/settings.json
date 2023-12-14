@@ -1,5 +1,8 @@
 {
     "files.associations": {
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "searchturple.h": "c",
+        "searchtuple.h": "c",
+        "findtablebyname.h": "c"
     }
 }
