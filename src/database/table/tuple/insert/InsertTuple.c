@@ -1,5 +1,5 @@
 #include "InsertTuple.h"
-#include "../../DatabaseStructures.c"
+#include "../../../DatabaseStructures.c"
 
 void InsertTuple(Database *db) {
     char tableName[MAX_STRING_SIZE];
