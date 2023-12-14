@@ -14,6 +14,7 @@
                 "${workspaceFolder}/src/database/table/list/table/ListTable.c",
                 "${workspaceFolder}/src/database/table/list/tableData/ListTableData.c",
                 "${workspaceFolder}/src/database/table/insert/InsertTuple.c",
+                "${workspaceFolder}/src/database/table/searchTuple/SearchTuple.c",
                 "-o",  
                 "${workspaceFolder}/dist/main",
             ], 

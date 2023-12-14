@@ -5,6 +5,7 @@
 #include "database/table/insert/InsertTuple.h"
 #include "database/table/list/tableData/ListTableData.h"
 #include "database/table/delete/DeleteTable.h"
+#include "database/table/searchTuple/SearchTuple.h"
 
 int main() {
     printf("Olá do arquivo main.c!\n");
@@ -15,9 +16,11 @@ int main() {
     CreateTable(&myDatabase);
     ListTable(&myDatabase);
     InsertTuple(&myDatabase);
-    ListTableData(&myDatabase);
+    InsertTuple(&myDatabase);
+    SearchTuple(&myDatabase);
+/*     ListTableData(&myDatabase);
     DeleteTable(&myDatabase);
     ListTable(&myDatabase);
-
+ */
     return 0;
 }
