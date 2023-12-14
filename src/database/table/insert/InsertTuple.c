@@ -21,16 +21,13 @@ void InsertTuple(Database *db) {
 
             Tuple *tuple = &(table->tuples[table->numTuples]);
             tuple->data = (char **)malloc(table->numColumns * sizeof(char *));
-
-            // Alocar espaço para a chave primária (ID) e atribuir o valor
+ 
             printf("Informe o valor para a chave primária (%s): ", table->columns[0].type);
             scanf("%u", &(tuple->primaryKey));
-
-            // Alocar espaço para os outros itens de data
+ 
             for (int i = 0; i < table->numColumns; i++) {
                 tuple->data[i] = (char *)malloc(MAX_STRING_SIZE);
-                if (i == 0) {
-                    // Atribuir o valor da chave primária ao primeiro item de data (id)
+                if (i == 0) { 
                     snprintf(tuple->data[i], MAX_STRING_SIZE, "%u", tuple->primaryKey);
                 } else {
                     printf("Informe o valor para a coluna %s (%s): ", table->columns[i].name, table->columns[i].type);

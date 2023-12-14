@@ -7,23 +7,20 @@ void CreateTable(Database *db) {
         Table *table = &(db->tables[db->numTables]);
         printf("Informe o nome da tabela: ");
         scanf("%s", table->name);
-
-        // Definindo o número de colunas
+ 
         table->numColumns = 0;
-
-        // Definindo a primeira coluna como chave primária
+ 
         printf("Informe o nome da coluna 1/primarykey: ");
         scanf("%s", table->columns[table->numColumns].name);
-        strcpy(table->columns[table->numColumns].type, "int");  // Tipo da chave primária
+        strcpy(table->columns[table->numColumns].type, "int");  
         table->numColumns++;
-
-        // Solicitando o restante das colunas
+ 
         printf("Informe o número de colunas adicionais: ");
         int numAdditionalColumns;
         scanf("%d", &numAdditionalColumns);
 
         for (int i = 0; i < numAdditionalColumns; i++) {
-            printf("Informe o nome da coluna %d: ", i + 2);  // Começa a partir da segunda coluna
+            printf("Informe o nome da coluna %d: ", i + 2);   
             scanf("%s", table->columns[table->numColumns].name);
 
             printf("Informe o tipo da coluna %d (char, int, float, double, string): ", i + 2);
