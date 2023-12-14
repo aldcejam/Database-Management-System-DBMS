@@ -8,32 +8,32 @@ void CreateTable(Database *db) {
         printf("Informe o nome da tabela: ");
         scanf("%s", table->name);
 
-        printf("Informe o número de colunas: ");
-        scanf("%d", &(table->numColumns));
- 
-        for (int i = 0; i < table->numColumns; i++) {
-            printf("Informe o nome da coluna %d: ", i + 1);
-            scanf("%s", table->columns[i].name);
+        // Definindo o número de colunas
+        table->numColumns = 0;
 
-            printf("Informe o tipo da coluna %d (char, int, float, double, string): ", i + 1);
-            scanf("%s", table->columns[i].type);
-        }
- 
-        printf("Informe o nome da coluna para ser a chave primária: ");
-        char primaryKeyColumn[MAX_STRING_SIZE];
-        scanf("%s", primaryKeyColumn);
+        // Definindo a primeira coluna como chave primária
+        printf("Informe o nome da coluna 1/primarykey: ");
+        scanf("%s", table->columns[table->numColumns].name);
+        strcpy(table->columns[table->numColumns].type, "int");  // Tipo da chave primária
+        table->numColumns++;
 
-        for (int i = 0; i < table->numColumns; i++) {
-            if (strcmp(table->columns[i].name, primaryKeyColumn) == 0 &&
-                strcmp(table->columns[i].type, "int") == 0) {
-                printf("Chave primária definida como: %s\n", primaryKeyColumn);
-                break;
-            } else if (i == table->numColumns - 1) {
-                printf("Coluna especificada não é válida para chave primária ou não é do tipo inteiro sem sinal.\n");
-                exit(EXIT_FAILURE);
-            }
+        // Solicitando o restante das colunas
+        printf("Informe o número de colunas adicionais: ");
+        int numAdditionalColumns;
+        scanf("%d", &numAdditionalColumns);
+
+        for (int i = 0; i < numAdditionalColumns; i++) {
+            printf("Informe o nome da coluna %d: ", i + 2);  // Começa a partir da segunda coluna
+            scanf("%s", table->columns[table->numColumns].name);
+
+            printf("Informe o tipo da coluna %d (char, int, float, double, string): ", i + 2);
+            scanf("%s", table->columns[table->numColumns].type);
+
+            table->numColumns++;
         }
- 
+
+        printf("Chave primária definida como: %s\n", table->columns[0].name);
+
         table->numTuples = 0;
         db->numTables++;
         printf("Tabela criada com sucesso.\n");

@@ -4,6 +4,7 @@
 #include "database/table/list/table/ListTable.h"
 #include "database/table/insert/InsertTuple.h"
 #include "database/table/list/tableData/ListTableData.h"
+#include "database/table/delete/DeleteTable.h"
 
 int main() {
     printf("Olá do arquivo main.c!\n");
@@ -15,6 +16,8 @@ int main() {
     ListTable(&myDatabase);
     InsertTuple(&myDatabase);
     ListTableData(&myDatabase);
+    DeleteTable(&myDatabase);
+    ListTable(&myDatabase);
 
     return 0;
 }
