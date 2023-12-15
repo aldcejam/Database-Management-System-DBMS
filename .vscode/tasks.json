@@ -16,6 +16,7 @@
                 "${workspaceFolder}/src/database/table/tuple/insert/InsertTuple.c",
                 "${workspaceFolder}/src/database/table/tuple/search/SearchTuple.c",
                 "${workspaceFolder}/src/database/table/tuple/delete/DeleteTuple.c",
+                "${workspaceFolder}/src/database/table/save/SaveTable.c",
                 "-o",  
                 "${workspaceFolder}/dist/main",
             ], 

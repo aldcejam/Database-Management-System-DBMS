@@ -1,7 +1,7 @@
 #include "CreateTable.h"
 #include "../../DatabaseStructures.c"
 #include <stdio.h>
-#include <stdlib.h>  // Adicionado para a função atoi
+#include <stdlib.h> 
 
 void CreateTable(Database *db) {
     if (db->numTables < MAX_TABLES) {
@@ -14,25 +14,19 @@ void CreateTable(Database *db) {
         printf("Informe o nome da coluna primarykey: ");
         scanf("%s", table->columns[table->numColumns].name);
 
-        char type[MAX_STRING_SIZE];
-        do {
-            printf("Informe o tipo da coluna primarykey (int): ");
-            scanf("%s", type);
-        } while (strcmp(type, "int") != 0);
-
-        strcpy(table->columns[table->numColumns].type, type);
+        // Define automaticamente o tipo da primeira coluna como "int"
+        strcpy(table->columns[table->numColumns].type, "int");
         table->numColumns++;
  
         int numAdditionalColumns;
 
-        // Verificar se a entrada é um número inteiro válido
         while (1) {
             printf("Informe o número de colunas adicionais (int): ");
             if (scanf("%d", &numAdditionalColumns) == 1 && numAdditionalColumns >= 0) {
                 break;
             } else {
                 printf("Por favor, insira um número inteiro válido para o número de colunas adicionais.\n");
-                while (getchar() != '\n');  // Limpar o buffer de entrada
+                while (getchar() != '\n');  
             }
         }
 
@@ -42,11 +36,13 @@ void CreateTable(Database *db) {
 
             do {
                 printf("Informe o tipo da coluna %d (char, int, float, double, string): ", i + 2);
-                scanf("%s", type);
-            } while (strcmp(type, "char") != 0 && strcmp(type, "int") != 0 && strcmp(type, "float") != 0 &&
-                     strcmp(type, "double") != 0 && strcmp(type, "string") != 0);
+                scanf("%s", table->columns[table->numColumns].type);
+            } while (strcmp(table->columns[table->numColumns].type, "char") != 0 &&
+                     strcmp(table->columns[table->numColumns].type, "int") != 0 &&
+                     strcmp(table->columns[table->numColumns].type, "float") != 0 &&
+                     strcmp(table->columns[table->numColumns].type, "double") != 0 &&
+                     strcmp(table->columns[table->numColumns].type, "string") != 0);
 
-            strcpy(table->columns[table->numColumns].type, type);
             table->numColumns++;
         }
 

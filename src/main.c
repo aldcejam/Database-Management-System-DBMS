@@ -7,6 +7,7 @@
 #include "database/table/tuple/insert/InsertTuple.h"
 #include "database/table/tuple/search/SearchTuple.h"
 #include "database/table/tuple/delete/DeleteTuple.h"
+#include "database/table/save/SaveTable.h"
 
 void displayMenu() {
     printf("\nEscolha uma opção:\n");
@@ -16,7 +17,8 @@ void displayMenu() {
     printf("4. Listar dados da tabela\n");
     printf("5. Excluir tabela\n");
     printf("6. Listar tabelas\n");
-    printf("7. Sair\n");
+    printf("7. Salvar tabela\n");
+    printf("8. Sair\n");
 }
 
 int main() {
@@ -51,12 +53,15 @@ int main() {
                 ListTable(&myDatabase);
                 break;
             case '7':
+                SaveTable(&myDatabase);
+                break;
+            case '8':
                 printf("Encerrando o programa.\n");
                 break;
             default:
                 printf("Opção inválida. Tente novamente.\n");
         }
-    } while (choice != '7');
+    } while (choice != '8');
 
     return 0;
 }

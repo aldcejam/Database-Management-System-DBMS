@@ -1,18 +1,18 @@
-#include "ListTableData.h"
-#include "../../../DatabaseStructures.c"
+#include "SaveTable.h"
+#include "../../DatabaseStructures.c"
 
-void printSeparator(int *columnWidths, int numColumns) {
+void printSeparatorToFile(FILE *file, int *columnWidths, int numColumns) {
     for (int i = 0; i < numColumns; i++) {
         for (int j = 0; j < columnWidths[i] + 2; j++) {
-            printf("-");
+            fprintf(file, "-");
         } 
     }
-    printf("\n");
+    fprintf(file, "\n");
 }
 
-void ListTableData(Database *db) {
+void SaveTable(Database *db) {
     char tableName[MAX_STRING_SIZE];
-    printf("Informe o nome da tabela para listar os dados: ");
+    printf("Informe o nome da tabela para salvar os dados: ");
     scanf("%s", tableName);
 
     Table *table = NULL;
@@ -24,6 +24,11 @@ void ListTableData(Database *db) {
     }
 
     if (table != NULL) {
+        char fileName[100];
+        strcpy(fileName, "src/tablesCreated/");
+        strcpy(fileName, tableName);
+        FILE *file = fopen(strcat(fileName, ".txt"), "w");
+
         int columnWidths[table->numColumns];
 
         for (int i = 0; i < table->numColumns; i++) {
@@ -37,24 +42,27 @@ void ListTableData(Database *db) {
         }
 
         for (int i = 0; i < table->numColumns; i++) {
-            printf("%-*s", columnWidths[i], table->columns[i].name);
+            fprintf(file, "%-*s", columnWidths[i], table->columns[i].name);
             if (i < table->numColumns - 1) {
-                printf("  ");
+                fprintf(file, "  ");
             }
         }
-        printf("\n");
- 
-        printSeparator(columnWidths, table->numColumns);
- 
+        fprintf(file, "\n");
+
+        printSeparatorToFile(file, columnWidths, table->numColumns);
+
         for (int i = 0; i < table->numTuples; i++) {
             for (int j = 0; j < table->numColumns; j++) {
-                printf("%-*s", columnWidths[j], table->tuples[i].data[j]);
+                fprintf(file, "%-*s", columnWidths[j], table->tuples[i].data[j]);
                 if (j < table->numColumns - 1) {
-                    printf("  ");
+                    fprintf(file, "  ");
                 }
             }
-            printf("\n");
+            fprintf(file, "\n");
         }
+
+        fclose(file);  
+        printf("Dados salvos com sucesso.\n");
     } else {
         printf("Tabela %s não encontrada.\n", tableName);
     }
